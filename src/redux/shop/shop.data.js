@@ -57,6 +57,24 @@ const SHOP_DATA = {
         name: 'Blue Snapback',
         imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
         price: 16
+      },
+      {
+        id: 10,
+        name: 'Black Gabardine',
+        imageUrl: 'https://i.ibb.co/4F7vbtK/1.jpg',
+        price: 54
+      },
+      {
+        id: 11,
+        name: 'Mexican Sombrero',
+        imageUrl: 'https://i.ibb.co/7KkDPKw/2.jpg',
+        price: 42
+      },
+      {
+        id: 12,
+        name: 'Japanese Kasa',
+        imageUrl: 'https://i.ibb.co/w6L1yzM/3.jpg',
+        price: 32
       }
     ]
   },
@@ -66,49 +84,49 @@ const SHOP_DATA = {
     routeName: 'sneakers',
     items: [
       {
-        id: 10,
+        id: 13,
         name: 'Adidas NMD',
         imageUrl: 'https://i.ibb.co/0s3pdnc/adidas-nmd.png',
         price: 220
       },
       {
-        id: 11,
+        id: 14,
         name: 'Adidas Yeezy',
         imageUrl: 'https://i.ibb.co/dJbG1cT/yeezy.png',
         price: 280
       },
       {
-        id: 12,
+        id: 15,
         name: 'Black Converse',
         imageUrl: 'https://i.ibb.co/bPmVXyP/black-converse.png',
         price: 110
       },
       {
-        id: 13,
+        id: 16,
         name: 'Nike White AirForce',
         imageUrl: 'https://i.ibb.co/1RcFPk0/white-nike-high-tops.png',
         price: 160
       },
       {
-        id: 14,
+        id: 17,
         name: 'Nike Red High Tops',
         imageUrl: 'https://i.ibb.co/QcvzydB/nikes-red.png',
         price: 160
       },
       {
-        id: 15,
+        id: 18,
         name: 'Nike Brown High Tops',
         imageUrl: 'https://i.ibb.co/fMTV342/nike-brown.png',
         price: 160
       },
       {
-        id: 16,
+        id: 19,
         name: 'Air Jordan Limited',
         imageUrl: 'https://i.ibb.co/w4k6Ws9/nike-funky.png',
         price: 190
       },
       {
-        id: 17,
+        id: 20,
         name: 'Timberlands',
         imageUrl: 'https://i.ibb.co/Mhh6wBg/timberlands.png',
         price: 200
@@ -121,34 +139,52 @@ const SHOP_DATA = {
     routeName: 'jackets',
     items: [
       {
-        id: 18,
+        id: 21,
         name: 'Black Jean Shearling',
         imageUrl: 'https://i.ibb.co/XzcwL5s/black-shearling.png',
         price: 125
       },
       {
-        id: 19,
+        id: 22,
         name: 'Blue Jean Jacket',
         imageUrl: 'https://i.ibb.co/mJS6vz0/blue-jean-jacket.png',
         price: 90
       },
       {
-        id: 20,
+        id: 23,
         name: 'Grey Jean Jacket',
         imageUrl: 'https://i.ibb.co/N71k1ML/grey-jean-jacket.png',
         price: 90
       },
       {
-        id: 21,
+        id: 24,
         name: 'Brown Shearling',
         imageUrl: 'https://i.ibb.co/s96FpdP/brown-shearling.png',
         price: 165
       },
       {
-        id: 22,
+        id: 25,
         name: 'Tan Trench',
         imageUrl: 'https://i.ibb.co/M6hHc3F/brown-trench.png',
         price: 185
+      },
+      {
+        id: 26,
+        name: 'Green Leather Jacket',
+        imageUrl: 'https://i.ibb.co/vm8XRYp/1.jpg',
+        price: 175
+      },
+      {
+        id: 27,
+        name: 'White Sweatshirt',
+        imageUrl: 'https://i.ibb.co/xYWKgKx/3.jpg',
+        price: 170
+      },
+      {
+        id: 28,
+        name: 'Retro Nuptse',
+        imageUrl: 'https://i.ibb.co/XDBcYwS/retro-nuptse.jpg',
+        price: 190
       }
     ]
   },
@@ -158,46 +194,52 @@ const SHOP_DATA = {
     routeName: 'womens',
     items: [
       {
-        id: 23,
+        id: 29,
         name: 'Blue Tanktop',
         imageUrl: 'https://i.ibb.co/7CQVJNm/blue-tank.png',
         price: 25
       },
       {
-        id: 24,
+        id: 30,
         name: 'Floral Blouse',
         imageUrl: 'https://i.ibb.co/4W2DGKm/floral-blouse.png',
         price: 20
       },
       {
-        id: 25,
+        id: 31,
         name: 'Floral Dress',
         imageUrl: 'https://i.ibb.co/KV18Ysr/floral-skirt.png',
         price: 80
       },
       {
-        id: 26,
+        id: 32,
         name: 'Red Dots Dress',
         imageUrl: 'https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png',
         price: 80
       },
       {
-        id: 27,
+        id: 33,
         name: 'Striped Sweater',
         imageUrl: 'https://i.ibb.co/KmSkMbH/striped-sweater.png',
         price: 45
       },
       {
-        id: 28,
+        id: 34,
         name: 'Yellow Track Suit',
         imageUrl: 'https://i.ibb.co/v1cvwNf/yellow-track-suit.png',
         price: 135
       },
       {
-        id: 29,
+        id: 35,
         name: 'White Blouse',
         imageUrl: 'https://i.ibb.co/qBcrsJg/white-vest.png',
         price: 20
+      },
+      {
+        id: 36,
+        name: 'Leopard Print Shirt',
+        imageUrl: 'https://i.ibb.co/wLGFGXj/leopard-shirt.jpg',
+        price: 25
       }
     ]
   },
@@ -207,40 +249,52 @@ const SHOP_DATA = {
     routeName: 'mens',
     items: [
       {
-        id: 30,
+        id: 37,
         name: 'Camo Down Vest',
         imageUrl: 'https://i.ibb.co/xJS0T3Y/camo-vest.png',
         price: 325
       },
       {
-        id: 31,
+        id: 38,
         name: 'Floral T-shirt',
         imageUrl: 'https://i.ibb.co/qMQ75QZ/floral-shirt.png',
         price: 20
       },
       {
-        id: 32,
+        id: 39,
         name: 'Black & White Longsleeve',
         imageUrl: 'https://i.ibb.co/55z32tw/long-sleeve.png',
         price: 25
       },
       {
-        id: 33,
+        id: 40,
         name: 'Pink T-shirt',
         imageUrl: 'https://i.ibb.co/RvwnBL8/pink-shirt.png',
         price: 25
       },
       {
-        id: 34,
+        id: 41,
         name: 'Jean Long Sleeve',
         imageUrl: 'https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png',
         price: 40
       },
       {
-        id: 35,
+        id: 42,
         name: 'Burgundy T-shirt',
         imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
         price: 25
+      },
+      {
+        id: 43,
+        name: 'Casual Sling Shirt',
+        imageUrl: 'https://i.ibb.co/HzBVz9L/casual-sling-shirt.jpg',
+        price: 30
+      },
+      {
+        id: 44,
+        name: 'Dotted Red Shirt',
+        imageUrl: 'https://i.ibb.co/pK5yWQy/red-dotted.webp',
+        price: 25 
       }
     ]
   }
