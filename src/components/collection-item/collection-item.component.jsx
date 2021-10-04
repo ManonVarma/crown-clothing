@@ -10,6 +10,7 @@ import './collection-item.style.scss';
 
 const CollectionItem = ({ item, addItem }) => {
     const { name, price, imageUrl } = item;
+    let rupee = Math.floor(price*10.26);
 
     return (
         <div className='collection-item'>
@@ -21,7 +22,7 @@ const CollectionItem = ({ item, addItem }) => {
             />
             <div className='collection-footer'>
                 <span className='name'>{name}</span>
-                <span className='price'>{price}</span>
+                <span className='price'>₹{rupee}</span>
             </div>
             <CustomButton onClick={() => addItem(item)} inverted>
                 Add To Cart

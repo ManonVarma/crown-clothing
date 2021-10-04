@@ -1,0 +1,39 @@
+h1{
+    text-align: center;
+}
+
+.main_container_1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main_container_2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.content_div{
+    width: 30%;
+    height: 230px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.para{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.linkedIn{
+    font-size: 20px;
+}

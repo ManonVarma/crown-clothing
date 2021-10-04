@@ -35,7 +35,7 @@ const CheckoutPage = ({ cartItems, total }) => {
                 )
             }
             <div className='total'>
-                <span>TOTAL: ${total}</span>
+                <span>TOTAL: ₹{total * 10.26}</span>
             </div>
             <div className='test-warning'>
                 *PLease use the following test credit card for payments*

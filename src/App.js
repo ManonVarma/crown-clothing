@@ -10,7 +10,9 @@ import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 
-import Header from './components/header/header.component.jsx'
+import Header from './components/header/header.component.jsx';
+import ContactPage from './pages/contact/contact.component';
+import Footer from './components/footer/footer.component';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
@@ -64,7 +66,11 @@ class App extends React.Component {
                   : 
                   (<SignInAndSignUpPage />)
               }/>
+              <Route path='/contact'>
+                <ContactPage />
+              </Route>
           </Switch>
+      <Footer/>
       </div>
     );
   }
