@@ -13,8 +13,13 @@
     justify-content: flex-end;
 
     .option {
+      font-size: 20px;
       padding: 10px 15px;
       cursor: pointer;
     }
+
+    .dark-mode-icon {
+      font-size: 28px;
+    };
   }
 }

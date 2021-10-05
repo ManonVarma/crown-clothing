@@ -7,6 +7,7 @@ import { auth } from '../../firebase/firebase.utils';
 
 import CartIcon from '../cart-icon/cart-icon.component';
 import Brightness6OutlinedIcon from '@mui/icons-material/Brightness4Outlined';
+import SearchBar from "material-ui-search-bar";
 import { IconButton } from '@mui/material';
 
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
@@ -37,6 +38,7 @@ const Header = ({ currentUser, hidden }) => {
                 </div>
             </Link>
             <div className='options'>
+                <SearchBar className='search-bar' placeholder='Search Apparels' />
                 <Link className='option' to='/shop'>
                     SHOP
                 </Link>
