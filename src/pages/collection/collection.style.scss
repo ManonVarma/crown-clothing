@@ -1,10 +1,12 @@
 .collection-page {
     display: flex;
     flex-direction: column;
+    padding-left: 40px;
+    padding-right: 40px;
   
     .title {
       font-size: 38px;
-      margin: 0 auto 30px;
+      margin: 0 auto 55px;
     }
   
     .items {
@@ -13,7 +15,7 @@
       grid-gap: 10px;
   
       & .collection-item {
-        margin-bottom: 30px;
+        margin-bottom: 45px;
       }
     }
 }

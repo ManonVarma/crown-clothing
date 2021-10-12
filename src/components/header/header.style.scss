@@ -1,9 +1,24 @@
 .header {
-  height: 70px;
+  height: 90px;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  padding-left: 60px;
+  padding-right: 60px;
   margin-bottom: 25px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  filter:alpha(opacity=90);
+  -moz-opacity:0.9;
+  -khtml-opacity: 0.9;
+  opacity: 0.95;
+  background-color: rgba(255, 255, 255, 0.5); 
+  -o-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px) saturate(180%) blur(20px);
+  -moz-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px) saturate(180%);
 
   .options {
     width: 50%;
@@ -11,6 +26,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    font-weight: bold;
 
     .option {
       font-size: 20px;

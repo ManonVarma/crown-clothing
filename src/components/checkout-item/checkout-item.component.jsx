@@ -22,7 +22,7 @@ const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
                     &#10095;
                 </div>
             </span>
-            <span className='price'>{price * 10.26}</span>
+            <span className='price'>{(price * 10.26).toFixed(2)}</span>
             <div className='remove-button' onClick={() => clearItem(cartItem)}>
                 &#10005;
             </div>

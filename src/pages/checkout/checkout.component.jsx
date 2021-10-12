@@ -30,12 +30,15 @@ const CheckoutPage = ({ cartItems, total }) => {
                 </div>
             </div>
             {
-                cartItems.map(cartItem => 
-                    <CheckoutItem key={cartItem.id} cartItem={cartItem}></CheckoutItem>
-                )
+                cartItems.length === 0 ?
+                    <h2>No items in yout cart</h2>
+                    :
+                    cartItems.map(cartItem => 
+                        <CheckoutItem key={cartItem.id} cartItem={cartItem}></CheckoutItem>
+                    )
             }
             <div className='total'>
-                <span>TOTAL: ₹{total * 10.26}</span>
+                <span>TOTAL: ₹{(total * 10.26).toFixed(2)}</span>
             </div>
             <div className='test-warning'>
                 *PLease use the following test credit card for payments*

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -7,21 +8,54 @@ import { auth } from '../../firebase/firebase.utils';
 
 import CartIcon from '../cart-icon/cart-icon.component';
 import Brightness6OutlinedIcon from '@mui/icons-material/Brightness4Outlined';
-import SearchBar from "material-ui-search-bar";
+// import SearchBar from "material-ui-search-bar";
+import SearchBar from '../search-bar/search-bar.component';
 import { IconButton } from '@mui/material';
 
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+// import SearchPage from '../../pages/searchpage/searchpage.component';
 
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
+// import { selectSearchedItem } from '../../redux/search/search.selectors';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import './header.style.scss';
 
 const Header = ({ currentUser, hidden }) => {
+    const [searchedText, setSearchedText] = useState('');
+    let location = useLocation();
+    let history = useHistory();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('hs', searchedText);
+        history.push({
+            pathname: '/search',
+            state: {
+                searchedText: searchedText
+            }
+        });
+    }
+    
+    const clearSearchInput = () => {
+        const searchInput = document.getElementsByClassName('search-input')[0];
+            if (searchInput)
+                searchInput.value = '';
+            setSearchedText('');
+    }
+
+    // const searchApparel = (searchedText) => {
+    //     if (searchItem==='')
+    //         <SearchPage />
+    // }
     return (
         <div className='header'>
-            <Link className='logo-container' to='/'>
+            <Link 
+                className='logo-container' 
+                to='/' 
+                onClick={clearSearchInput}
+            >
                 <div style={
                     {
                         display: 'flex', 
@@ -38,8 +72,18 @@ const Header = ({ currentUser, hidden }) => {
                 </div>
             </Link>
             <div className='options'>
-                <SearchBar className='search-bar' placeholder='Search Apparels' />
-                <Link className='option' to='/shop'>
+                {
+                    location.pathname !== '/contact' 
+                    && location.pathname !== '/signin' 
+                    && location.pathname !== '/checkout' ?
+                    <SearchBar handleSubmit={handleSubmit} setSearchedText={setSearchedText} />
+                    : null
+                }
+                <Link 
+                    className='option' 
+                    to='/shop'
+                    onClick={clearSearchInput}
+                >
                     SHOP
                 </Link>
                 <Link className='option' to='/contact'>
@@ -66,7 +110,7 @@ const Header = ({ currentUser, hidden }) => {
                 hidden ? null: <CartDropdown />
             }
         </div>
-    )
+    );
 }
 
 // const mapStateToProps = (state) => ({  
@@ -77,7 +121,7 @@ const Header = ({ currentUser, hidden }) => {
 // provided by 'reselect'
 const mapStateToProps = createStructuredSelector({  
     currentUser: selectCurrentUser,
-    hidden: selectCartHidden
+    hidden: selectCartHidden,
 });
 
 export default connect(mapStateToProps)(Header);

@@ -10,7 +10,7 @@ import './collection-item.style.scss';
 
 const CollectionItem = ({ item, addItem }) => {
     const { name, price, imageUrl } = item;
-    let rupee = Math.floor(price*10.26);
+    let rupee = Math.floor(price*10.26).toFixed(2);;
 
     return (
         <div className='collection-item'>
