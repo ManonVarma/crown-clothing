@@ -18,6 +18,7 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
+import SearchPage from './pages/search-page/search-page.component';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -67,6 +68,7 @@ class App extends React.Component {
                   (<SignInAndSignUpPage />)
               }/>
               <Route path='/contact' component={ContactPage} />
+              <Route path='/search' component={SearchPage} />
           </Switch>
           <Footer/>
       </div>

@@ -1,0 +1,24 @@
+.search-page {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.no-item {
+    font-size: 38px;
+    text-align: center;
+}
+
+.yes-item {
+    font-size: 38px;
+    padding-bottom: 27px;
+}
+
+.matched-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.collection-item {
+    margin-bottom: 45px;
+}

@@ -7,12 +7,14 @@
     margin: 50px auto 0;
   
     .checkout-header {
-      font-size: 23px;
+      font-size: 26px;
+      font-weight: bold;
       width: 100%;
       padding: 10px 0;
       display: flex;
       justify-content: space-between;
       border-bottom: 1px solid darkgrey;
+      padding-bottom: 20px;
   
       .header-block {
         text-transform: capitalize;
