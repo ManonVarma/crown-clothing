@@ -9,19 +9,20 @@ import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import CheckoutPage from './pages/checkout/checkout.component';
+import SearchPage from './pages/search-page/search-page.component';
+import ContactPage from './pages/contact/contact.component';
 
 import Header from './components/header/header.component.jsx';
-import ContactPage from './pages/contact/contact.component';
 import Footer from './components/footer/footer.component';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
-import SearchPage from './pages/search-page/search-page.component';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
+
   componentDidMount() {
     const { setCurrentUser } = this.props;
 
@@ -32,7 +33,7 @@ class App extends React.Component {
       if (userAuth){
         const userRef = await createUserProfileDocument(userAuth);
 
-        userRef.onSnapshot(snapShot => {
+        userRef.onSnapshot(snapShot => {  // whenever the document snapshot object updates
           setCurrentUser({
             id: snapShot.id,
             ...snapShot.data()
