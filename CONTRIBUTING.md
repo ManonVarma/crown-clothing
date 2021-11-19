@@ -1,6 +1,6 @@
 ## Vague PRs will be strictly denied
 
-Issue: Need a search bar for product search
+Issue: Need dark mode for the website
 
 ## How to submit a PR?
 Provide details on what did you change
