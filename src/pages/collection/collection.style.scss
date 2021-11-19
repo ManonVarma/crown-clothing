@@ -19,4 +19,18 @@
       }
     }
 }
+
+@media screen and (max-width: 1000px) {
+  .collection-page {
+    width: 750px;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+  }
+
+  .items {
+      display: flex;
+      flex-direction: column;
+  }
+}
   

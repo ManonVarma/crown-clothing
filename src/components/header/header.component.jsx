@@ -7,7 +7,7 @@ import { createStructuredSelector } from 'reselect';
 import { auth } from '../../firebase/firebase.utils';
 
 import CartIcon from '../cart-icon/cart-icon.component';
-import Brightness6OutlinedIcon from '@mui/icons-material/Brightness4Outlined';
+// import Brightness6OutlinedIcon from '@mui/icons-material/Brightness4Outlined';
 // import SearchBar from "material-ui-search-bar";
 import SearchBar from '../search-bar/search-bar.component';
 import { IconButton } from '@mui/material';
@@ -17,12 +17,13 @@ import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
+import { emptyTheCart } from '../../redux/cart/cart.actions';
 // import { selectSearchedItem } from '../../redux/search/search.selectors';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import './header.style.scss';
 
-const Header = ({ currentUser, hidden }) => {
+const Header = ({ currentUser, hidden, emptyTheCart }) => {
     const [searchedText, setSearchedText] = useState('');
     let location = useLocation();
     let history = useHistory();
@@ -67,18 +68,25 @@ const Header = ({ currentUser, hidden }) => {
                         <Logo className='logo' />
                     </div>
                     <div>
-                        <h1 className='title'>CROWN CLOTHING</h1>
+                        <p className='title'>CROWN CLOTHING</p>
                     </div>
                 </div>
             </Link>
-            <div className='options'>
-                {
+            {
                     location.pathname !== '/contact' 
                     && location.pathname !== '/signin' 
-                    && location.pathname !== '/checkout' ?
-                    <SearchBar handleSubmit={handleSubmit} setSearchedText={setSearchedText} />
+                    && location.pathname !== '/checkout'
+                    && location.pathname !== '/myorders' ?
+                    <div className='search-bar-container'>   
+                        <SearchBar
+                            handleSubmit={handleSubmit} 
+                            setSearchedText={setSearchedText}  
+                            
+                        />
+                    </div>
                     : null
-                }
+            }
+            <div className='options'>
                 <Link 
                     className='option' 
                     to='/shop'
@@ -89,9 +97,19 @@ const Header = ({ currentUser, hidden }) => {
                 <Link className='option' to='/contact'>
                     CONTACT
                 </Link>
+                <Link className={currentUser? 'option': ''} to='/myorders'>
+                {
+                    currentUser ?
+                    <div>MY ORDERS</div> : null
+                }
+                </Link>
                 {
                     currentUser ?  // does the currentUser exist? (is the user signed in?)
-                    <div className='option' onClick={() => auth.signOut()}>
+                    <div className='option' onClick={() => {
+                        auth.signOut();
+                        history.replace('/');
+                        emptyTheCart();
+                    }}>
                         SIGN OUT
                     </div>
                     : 
@@ -99,16 +117,21 @@ const Header = ({ currentUser, hidden }) => {
                         SIGN IN
                     </Link>
                 }
-                <IconButton>
-                    <CartIcon />
-                </IconButton>
-                <IconButton>
-                    <Brightness6OutlinedIcon className='dark-mode-icon' />
-                </IconButton>
+                <div className="cart-icon-container">
+                    <IconButton>
+                        <CartIcon />
+                    </IconButton>
+                </div>
+                {
+                    hidden ? 
+                    null
+                    : 
+                    <div className='cart-dropdown-container'><CartDropdown /></div>
+                }
             </div>
-            {
-                hidden ? null: <CartDropdown />
-            }
+                {/* <IconButton>
+                    <Brightness6OutlinedIcon className='dark-mode-icon' />
+                </IconButton> */}
         </div>
     );
 }
@@ -124,4 +147,9 @@ const mapStateToProps = createStructuredSelector({
     hidden: selectCartHidden,
 });
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = dispatch => ({
+    emptyTheCart: () => dispatch(emptyTheCart())
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

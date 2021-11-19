@@ -1,8 +1,36 @@
 .sign-in-and-sign-up {
     font-size: 20px;
-    width: 850px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding-top: 15px;
     margin: 30px auto;
+    
+
+    .signin {
+        margin-right: 60px;
+    }
+
+    .signup {
+        margin-left: 60px;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .sign-in-and-sign-up {
+        margin-left: 5%;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+    }
+    
+    .signin {
+        margin-right: 0px;
+    }
+
+    .signup {
+        margin-top: 80px;
+        margin-right: 125px;
+    }
+
 }
