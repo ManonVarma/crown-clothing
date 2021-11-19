@@ -1,6 +1,7 @@
 .search-page {
     margin-left: 40px;
     margin-right: 40px;
+    min-height: 400px;
 }
 
 .no-item {
