@@ -42,21 +42,21 @@ const MyOrdersPage = ({ currentUser }) => {
                 :
                 orders.length > 0 ? 
                 <>
-                <h1>YOUR ORDERS</h1>
-                {
-                    orders.map(order => {
-                        return (
-                            <div style={{marginTop: '80px', marginBottom: '20px'}}>
-                                <h1>ORDER ID : &nbsp; #{order.id}</h1>
-                                <h1>ORDERED ON: &nbsp; {order.data.orderedOn}</h1>
-                                <OrderList
-                                    cartItems={order.data.cartItems} 
-                                    total={parseFloat(order.data.total)}>
-                                </OrderList>
-                            </div>
-                        )
-                    }) 
-                }
+                    <h1>YOUR ORDERS</h1>
+                    {
+                        orders.map(order => {
+                            return (
+                                <div style={{marginTop: '80px', marginBottom: '20px'}}>
+                                    <h1>ORDER ID : &nbsp; #{order.id}</h1>
+                                    <h1>ORDERED ON: &nbsp; {order.data.orderedOn}</h1>
+                                    <OrderList
+                                        cartItems={order.data.cartItems} 
+                                        total={parseFloat(order.data.total)}>
+                                    </OrderList>
+                                </div>
+                            )
+                        }) 
+                    }
                 </>
                 : 
                 <h1>NO ORDERS</h1>
