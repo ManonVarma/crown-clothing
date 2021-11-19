@@ -1,0 +1,12 @@
+.my-orders {
+    min-height: 400px;
+}
+
+.loading {
+    margin-top: 150px;
+    text-align: center;
+}
+
+.no-orders {
+    margin-top: 250px;
+}

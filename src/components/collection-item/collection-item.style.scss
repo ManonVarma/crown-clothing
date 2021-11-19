@@ -54,4 +54,32 @@
       }
     }
 }
+
+@media screen and (max-width: 1000px) {
+  .collection-item {
+    width: 700px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .collection-item {
+    width: 450px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .collection-item {
+    width: 300px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .collection-footer {
+    width: auto;
+  }
+}
   

@@ -14,12 +14,16 @@ const SearchBar = ({ handleSubmit, setSearchedText }) => {
             <form id='search-bar-from' onSubmit={(e) => handleSubmit(e)}>
                 <table className="container">
                     <tr>
-                        <td>
-                        <IconButton className='search-icon'>
-                            <button type='submit' className='search-button'>
-                                <i className="fas fa-search"></i>
-                            </button>
-                        </IconButton>
+                        <td style={{width: '0'}}>
+                            <IconButton className='search-icon'>
+                                <button 
+                                    type='submit' 
+                                    className='search-button' 
+                                    style={{cursor: 'pointer'}}
+                                >
+                                    <i className="fas fa-search"></i>
+                                </button>
+                            </IconButton>
                         </td>
                         <td>
                             <input 

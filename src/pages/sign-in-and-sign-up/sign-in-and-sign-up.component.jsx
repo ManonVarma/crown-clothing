@@ -9,8 +9,9 @@ import './sign-in-and-sign-up.style.scss';
 const SignInAndSignUpPage = () => {
     return (
         <div className='sign-in-and-sign-up'>
-            <SignIn />
-            <SignUp />
+            <div className='signin'><SignIn /></div>
+            <div className='signup'><SignUp /></div>
+            
         </div>
     )
 }
