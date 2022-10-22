@@ -11,9 +11,9 @@ import './index.css';
 import App from './App';
 
 ReactDOM.render(
-  // will have to wrap everything in the Provider to use Redux
+  // will have to wrap everything in the Provider to use Redux (thats just how Redux works)
   <Provider store={store}>
-      {/* will have to wrap the App component in the BrowserRouter to use routing */}
+      {/* will have to wrap the App component in the BrowserRouter to use routing: This is router v4 */}
       <BrowserRouter>
         <PersistGate persistor={persistor}>
           <App />
