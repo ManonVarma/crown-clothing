@@ -24,10 +24,11 @@ export const signInWithGoogle  = () => auth.signInWithPopup(provider);
 
 // Firestore
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-  if (!userAuth)  // if there is no userAuth object (null, when the user isn't signed in)
+  if (!userAuth)  // if there is no userAuth object (null, when the user isn't signed/logged in)
     return;
 
-  // console.log(firestore.doc('users/123jskfjklas'));
+  console.log(firestore.doc('users/123jskfjklas'));
+  console.log('userAuth = ', userAuth);
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);
 
